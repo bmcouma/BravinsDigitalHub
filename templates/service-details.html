@@ -1,0 +1,111 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title dark-background">
+    <div class="container position-relative">
+      <h1>Our Services</h1>
+      <p>Explore our collection of past projects showcasing our expertise and creativity.</p>
+    </div>
+  </div>
+
+  <!-- Portfolio Section -->
+  <section id="portfolio" class="portfolio section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Our Work</h2>
+      <p>We take pride in every project we create. Here’s a look at some of our best work that illustrates our skills and dedication.</p>
+    </div>
+
+    <div class="container">
+      <div class="row gy-4">
+
+        <!-- Portfolio Item 1 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="portfolio-item position-relative">
+            <a href="{% url 'portfolio_details' 'project-one' %}" class="stretched-link">
+              <img src="{% static 'images/portfolio/project-one.jpg' %}" alt="Project One" class="img-fluid">
+              <div class="portfolio-overlay">
+                <h3>Project One</h3>
+                <p>Custom website development for an e-commerce business.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 2 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="portfolio-item position-relative">
+            <a href="{% url 'portfolio_details' 'project-two' %}" class="stretched-link">
+              <img src="{% static 'images/portfolio/project-two.jpg' %}" alt="Project Two" class="img-fluid">
+              <div class="portfolio-overlay">
+                <h3>Project Two</h3>
+                <p>SEO optimization for a high-profile blog.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 3 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="portfolio-item position-relative">
+            <a href="{% url 'portfolio_details' 'project-three' %}" class="stretched-link">
+              <img src="{% static 'images/portfolio/project-three.jpg' %}" alt="Project Three" class="img-fluid">
+              <div class="portfolio-overlay">
+                <h3>Project Three</h3>
+                <p>Graphic design and branding for a startup.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 4 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="portfolio-item position-relative">
+            <a href="{% url 'portfolio_details' 'project-four' %}" class="stretched-link">
+              <img src="{% static 'images/portfolio/project-four.jpg' %}" alt="Project Four" class="img-fluid">
+              <div class="portfolio-overlay">
+                <h3>Project Four</h3>
+                <p>Content creation for a digital marketing campaign.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 5 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="portfolio-item position-relative">
+            <a href="{% url 'portfolio_details' 'project-five' %}" class="stretched-link">
+              <img src="{% static 'images/portfolio/project-five.jpg' %}" alt="Project Five" class="img-fluid">
+              <div class="portfolio-overlay">
+                <h3>Project Five</h3>
+                <p>Web design and development for a local non-profit.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+        <!-- Portfolio Item 6 -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="portfolio-item position-relative">
+            <a href="{% url 'portfolio_details' 'project-six' %}" class="stretched-link">
+              <img src="{% static 'images/portfolio/project-six.jpg' %}" alt="Project Six" class="img-fluid">
+              <div class="portfolio-overlay">
+                <h3>Project Six</h3>
+                <p>Virtual assistance support for efficient business operations.</p>
+              </div>
+            </a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+</main>
+
+{% endblock %}

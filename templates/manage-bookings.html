@@ -1,0 +1,58 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+<div class="container py-5">
+    <h2 class="mb-4 text-center">Manage Your Bookings</h2>
+
+    {% if messages %}
+        <div class="mb-3">
+            {% for message in messages %}
+                <div class="alert {{ message.tags|default:'alert-info' }}" role="alert">
+                    {{ message }}
+                </div>
+            {% endfor %}
+        </div>
+    {% endif %}
+
+    <div class="booking-table-container">
+        <table class="table table-bordered table-striped">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>Service</th>
+                    <th>Amount (Ksh)</th>
+                    <th>Status</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for booking in bookings %}
+                    <tr>
+                        <td>{{ booking.id }}</td>
+                        <td>{{ booking.name }}</td>
+                        <td>{{ booking.email }}</td>
+                        <td>{{ booking.service.name }}</td>
+                        <td>{{ booking.amount }}</td>
+                        <td>
+                            <form method="post" action="{% url 'update_status' booking.id %}">
+                                {% csrf_token %}
+                                <select name="status" class="form-select">
+                                    <option value="Pending" {% if booking.status == 'Pending' %}selected{% endif %}>Pending</option>
+                                    <option value="Confirmed" {% if booking.status == 'Confirmed' %}selected{% endif %}>Confirmed</option>
+                                    <option value="Completed" {% if booking.status == 'Completed' %}selected{% endif %}>Completed</option>
+                                    <option value="Cancelled" {% if booking.status == 'Cancelled' %}selected{% endif %}>Cancelled</option>
+                                </select>
+                                <button type="submit" class="btn btn-primary btn-sm mt-2">Update</button>
+                            </form>
+                        </td>
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}

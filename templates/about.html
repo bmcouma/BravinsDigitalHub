@@ -1,0 +1,44 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<!-- About Section -->
+<section id="about" class="about section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>About Us</h2>
+    <p>Learn more about who we are and what we do</p>
+  </div><!-- End Section Title -->
+
+  <div class="container" data-aos="fade-up" data-aos-delay="100">
+
+    <div class="row">
+      <div class="col-lg-6">
+        <img src="{% static 'assets/img/about/about-img.jpg' %}" class="img-fluid" alt="About Us">
+      </div>
+      <div class="col-lg-6">
+        <h3>Our Mission</h3>
+        <p>Our mission is to provide high-quality services that help businesses and individuals achieve their digital goals. We prioritize innovation, reliability, and client satisfaction in every project we take on.</p>
+
+        <h3>Our Vision</h3>
+        <p>To be a leading provider of innovative digital solutions, empowering clients around the world to enhance their digital presence and streamline their operations.</p>
+
+        <h3>What We Offer</h3>
+        <ul>
+          <li>Custom Web Development</li>
+          <li>Digital Marketing Strategies</li>
+          <li>SEO Optimization</li>
+          <li>Graphic Design and Content Creation</li>
+          <li>Virtual Assistance and More</li>
+        </ul>
+      </div>
+    </div>
+
+  </div>
+
+</section><!-- /About Section -->
+
+{% endblock %}

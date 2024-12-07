@@ -1,0 +1,115 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<main class="main">
+
+  <!-- Page Title -->
+  <div class="page-title dark-background py-5">
+    <div class="container text-center text-white">
+      <h1 class="display-3">Our Services</h1>
+      <p class="lead">Transform your business with our high-quality digital solutions designed to elevate your brand.</p>
+    </div>
+  </div>
+
+  <!-- Services Overview -->
+  <section id="services-overview" class="services-overview section py-5">
+    <div class="container text-center">
+      <h2 class="mb-4">Why Choose Our Services?</h2>
+      <p class="mb-5">We offer comprehensive digital solutions tailored to your unique business needs. Our services are designed to deliver exceptional results and growth.</p>
+    </div>
+  </section>
+
+  <!-- Detailed Services -->
+  <section id="services" class="services section">
+    <div class="container">
+      <h2 class="text-center mb-5">Our Expertise in Digital Solutions</h2>
+      <div class="row gy-4">
+
+        <!-- Service 1: Digital Marketing -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="100">
+          <div class="service-item position-relative border rounded shadow-lg p-4">
+            <div class="icon">
+              <i class="bi bi-cash-stack" style="color: #fd7e14; font-size: 3.5rem;"></i>
+            </div>
+            <h3 class="h4 mb-3 text-warning">Digital Marketing</h3>
+            <p class="mb-3">Boost your brand’s online visibility with tailored marketing strategies that attract and retain your target audience. Our proven methods include SEO, paid advertising, and email marketing for consistent growth.</p>
+            <p class="fw-bold">Price: KSh 20,000</p>
+            <a href="{% url 'booking' %}" class="btn btn-warning text-white mt-2">Book with Us</a>
+          </div>
+        </div>
+
+        <!-- Service 2: Content Creation -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="200">
+          <div class="service-item position-relative border rounded shadow-lg p-4">
+            <div class="icon">
+              <i class="bi bi-calendar4-week" style="color: #fd7e14; font-size: 3.5rem;"></i>
+            </div>
+            <h3 class="h4 mb-3 text-warning">Content Creation</h3>
+            <p class="mb-3">Engage your audience with high-quality, shareable content tailored to your business goals. From blogs to video scripts, we craft impactful content that resonates with your audience.</p>
+            <p class="fw-bold">Price: KSh 15,000</p>
+            <a href="{% url 'booking' %}" class="btn btn-warning text-white mt-2">Book with Us</a>
+          </div>
+        </div>
+
+        <!-- Service 3: Social Media Management -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="300">
+          <div class="service-item position-relative border rounded shadow-lg p-4">
+            <div class="icon">
+              <i class="bi bi-chat-text" style="color: #fd7e14; font-size: 3.5rem;"></i>
+            </div>
+            <h3 class="h4 mb-3 text-warning">Social Media Management</h3>
+            <p class="mb-3">Streamline your social presence with expertly managed campaigns that drive engagement and growth. We ensure consistent brand messaging across platforms.</p>
+            <p class="fw-bold">Price: KSh 18,000</p>
+            <a href="{% url 'booking' %}" class="btn btn-warning text-white mt-2">Book with Us</a>
+          </div>
+        </div>
+
+        <!-- Service 4: Web Design -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="400">
+          <div class="service-item position-relative border rounded shadow-lg p-4">
+            <div class="icon">
+              <i class="bi bi-credit-card-2-front" style="color: #fd7e14; font-size: 3.5rem;"></i>
+            </div>
+            <h3 class="h4 mb-3 text-warning">Web Design</h3>
+            <p class="mb-3">Create visually stunning, user-friendly websites that elevate your brand and drive conversions. We combine aesthetics with functionality for the perfect user experience.</p>
+            <p class="fw-bold">Price: KSh 30,000</p>
+            <a href="{% url 'booking' %}" class="btn btn-warning text-white mt-2">Book with Us</a>
+          </div>
+        </div>
+
+        <!-- Service 5: SEO Services -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="500">
+          <div class="service-item position-relative border rounded shadow-lg p-4">
+            <div class="icon">
+              <i class="bi bi-globe" style="color: #fd7e14; font-size: 3.5rem;"></i>
+            </div>
+            <h3 class="h4 mb-3 text-warning">SEO Services</h3>
+            <p class="mb-3">Enhance your search engine rankings with comprehensive SEO strategies that ensure long-term success. We focus on both on-page and off-page SEO for maximum impact.</p>
+            <p class="fw-bold">Price: KSh 25,000</p>
+            <a href="{% url 'booking' %}" class="btn btn-warning text-white mt-2">Book with Us</a>
+          </div>
+        </div>
+
+        <!-- Service 6: Virtual Assistance -->
+        <div class="col-lg-4 col-md-6" data-aos="fade-up" data-aos-delay="600">
+          <div class="service-item position-relative border rounded shadow-lg p-4">
+            <div class="icon">
+              <i class="bi bi-clock" style="color: #fd7e14; font-size: 3.5rem;"></i>
+            </div>
+            <h3 class="h4 mb-3 text-warning">Virtual Assistance</h3>
+            <p class="mb-3">Stay organized and efficient with reliable virtual assistance services tailored to your business needs. From scheduling to data management, we handle it all.</p>
+            <p class="fw-bold">Price: KSh 12,000</p>
+            <a href="{% url 'booking' %}" class="btn btn-warning text-white mt-2">Book with Us</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+</main>
+
+{% endblock %}

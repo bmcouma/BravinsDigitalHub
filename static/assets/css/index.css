@@ -1,0 +1,19 @@
+.nav-link {
+    transition: all 0.3s ease-in-out;
+}
+
+.nav-link:hover {
+    background-color: #575757;
+    color: #f8f9fa !important;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transform: scale(1.05);
+}
+
+.hover-shadow {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    border-radius: 5px;
+}
+
+.navbar-toggler {
+    border: none;
+}

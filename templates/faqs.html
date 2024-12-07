@@ -1,0 +1,99 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+
+    <!-- Faq Section -->
+    <section id="faq" class="faq section">
+      <!-- Section Title -->
+      <div class="container section-title" data-aos="fade-up">
+        <h2>Frequently Asked Questions</h2>
+        <p>Get answers to the most common questions about our services</p>
+      </div><!-- End Section Title -->
+
+      <div class="container" data-aos="fade-up">
+        <div class="row">
+          <div class="col-12">
+            <div class="custom-accordion" id="accordion-faq">
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-1">
+                    How do I get started with booking a service?
+                  </button>
+                </h2>
+
+                <div id="collapse-faq-1" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    To get started, visit our booking page, select the service you need, fill in your details, and proceed with payment. You'll receive a confirmation email once your booking is processed.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-2">
+                     What payment methods do you accept?
+                  </button>
+                </h2>
+                <div id="collapse-faq-2" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    We accept various international payment methods, including PayPal, credit and debit cards, and bank transfers. Ensure your payment method is compatible with your location's currency and regulations.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-3">
+                  How do I contact support if I have questions or issues?
+                  </button>
+                </h2>
+
+                <div id="collapse-faq-3" class="collapse" aria-labelledby="headingThree" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    You can reach our support team via email at <strong>support@digitalhubcreations.com</strong> or by calling our helpline at <strong>+254 791832015</strong>. Our team is available to assist you 24/7 with any questions or concerns.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-4">
+                  Can I book a service from outside my country?
+                  </button>
+                </h2>
+
+                <div id="collapse-faq-4" class="collapse" aria-labelledby="headingFour" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    Yes, our services are available for international bookings. You can book and pay for services online from anywhere in the world. We support multiple currencies and international payment methods.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+              <div class="accordion-item">
+                <h2 class="mb-0">
+                  <button class="btn btn-link collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapse-faq-5">
+                  How secure is my data during the booking process?
+                  </button>
+                </h2>
+
+                <div id="collapse-faq-5" class="collapse" aria-labelledby="headingFive" data-parent="#accordion-faq">
+                  <div class="accordion-body">
+                    We prioritize your privacy and data security. Our website uses HTTPS encryption to ensure all your information is protected. Additionally, we adhere to global data protection standards for secure transactions.
+                  </div>
+                </div>
+              </div>
+              <!-- .accordion-item -->
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </section><!-- /Faq Section -->
+
+{% endblock %}

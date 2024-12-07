@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <title>Home</title>
+  <meta name="description" content="">
+  <meta name="keywords" content="">
+
+    {% load static %}
+
+  <!-- Favicons -->
+  <link href="{% static 'assets/img/favicon.png' %}" rel="icon">
+  <link href="{% static 'assets/img/apple-touch-icon.png' %}" rel="apple-touch-icon">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com" rel="preconnect">
+  <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="{% static 'assets/vendor/bootstrap/css/bootstrap.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/aos/aos.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/animate.css/animate.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/glightbox/css/glightbox.min.css' %}" rel="stylesheet">
+  <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+  <!-- Main CSS File -->
+  <link href="{% static 'assets/css/main.css' %}" rel="stylesheet">
+
+
+  <!-- =======================================================
+  * Template Name: Selecao
+  * Template URL: https://bootstrapmade.com/selecao-bootstrap-template/
+  * Updated: Aug 07 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body class="index-page">
+
+<header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
+
+    <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <!-- <img src="assets/img/logo.png" alt=""> -->
+      <h1 class="sitename">Digital Hub Creations</h1>
+    </a>
+
+    <nav id="navmenu" class="navmenu">
+      <ul>
+        <li><a href="{% url 'home' %}" class="active">Home</a></li>
+        <li><a href="{% url 'about' %}">About</a></li>
+        <li><a href="{% url 'services' %}">Services</a></li>
+        <li><a href="{% url 'portfolio-details' %}">Portfolio</a></li>
+        <li><a href="{% url 'team' %}">Team</a></li>
+        <li><a href="{% url 'testimonials' %}">Testimonials</a></li>
+        <li><a href="{% url 'faqs' %}">FAQs</a></li>
+        <li class="dropdown"><a href="#">Blog <i class="bi bi-chevron-down toggle-dropdown"></i></a>
+          <ul>
+            <li><a href="{% url 'blog-details' %}">Blog Details</a></li>
+          </ul>
+        </li>
+        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'booking' %}">Bookings</a></li>
+      </ul>
+      <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
+    </nav>
+
+  </div>
+</header>
+  <main class="main">
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero section dark-background">
+    <div id="hero-carousel" data-bs-interval="5000" class="container carousel carousel-fade" data-bs-ride="carousel">
+      <!-- Slide 1 -->
+      <div class="carousel-item active">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Welcome to <span>Digital Hub Creations</span></h2>
+          <p class="animate__animated animate__fadeInUp">Discover innovative solutions and exceptional services with Digital Hub Creations. Our expertise spans across technology, design, and digital strategies, ensuring your success in an ever-evolving market.</p>
+          <a href="#services" class="btn-get-started animate__animated animate__fadeInUp scrollto">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Slide 2 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Unlock Your Potential</h2>
+          <p class="animate__animated animate__fadeInUp">Empower your business with our tailored solutions and achieve remarkable growth. Let us guide you through seamless digital transformation and outstanding user experiences.</p>
+          <a href="#services" class="btn-get-started animate__animated animate__fadeInUp scrollto">Explore Services</a>
+        </div>
+      </div>
+
+      <!-- Slide 3 -->
+      <div class="carousel-item">
+        <div class="carousel-container">
+          <h2 class="animate__animated animate__fadeInDown">Transform Your Ideas into Reality</h2>
+          <p class="animate__animated animate__fadeInUp">From concept to execution, we bring your visions to life. Our team excels in creating impactful digital solutions tailored to your needs.</p>
+          <a href="#services" class="btn-get-started animate__animated animate__fadeInUp scrollto">Get Started</a>
+        </div>
+      </div>
+
+      <a class="carousel-control-prev" href="#hero-carousel" role="button" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon bi bi-chevron-left" aria-hidden="true"></span>
+      </a>
+      <a class="carousel-control-next" href="#hero-carousel" role="button" data-bs-slide="next">
+        <span class="carousel-control-next-icon bi bi-chevron-right" aria-hidden="true"></span>
+      </a>
+    </div>
+
+    <svg class="hero-waves" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/2000/svg" viewBox="0 24 150 28" preserveAspectRatio="none">
+      <defs>
+        <path id="wave-path" d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"></path>
+      </defs>
+      <g class="wave1">
+        <use xlink:href="#wave-path" x="50" y="3"></use>
+      </g>
+      <g class="wave2">
+        <use xlink:href="#wave-path" x="50" y="0"></use>
+      </g>
+      <g class="wave3">
+        <use xlink:href="#wave-path" x="50" y="9"></use>
+      </g>
+    </svg>
+  </section><!-- /Hero Section -->
+
+  <!-- Features Section -->
+  <section id="features" class="features section">
+    <div class="container">
+      <ul class="nav nav-tabs row d-flex" data-aos="fade-up" data-aos-delay="100">
+        <li class="nav-item col-3">
+          <a class="nav-link active show" data-bs-toggle="tab" data-bs-target="#features-tab-1">
+            <i class="bi bi-binoculars"></i>
+            <h4 class="d-none d-lg-block">In-depth Analysis for Enhanced Insights</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-2">
+            <i class="bi bi-box-seam"></i>
+            <h4 class="d-none d-lg-block">Comprehensive Solutions for Every Need</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-3">
+            <i class="bi bi-brightness-high"></i>
+            <h4 class="d-none d-lg-block">Transformative Ideas into Actionable Strategies</h4>
+          </a>
+        </li>
+        <li class="nav-item col-3">
+          <a class="nav-link" data-bs-toggle="tab" data-bs-target="#features-tab-4">
+            <i class="bi bi-command"></i>
+            <h4 class="d-none d-lg-block">Innovative Solutions for Dynamic Markets</h4>
+          </a>
+        </li>
+      </ul><!-- End Tab Nav -->
+
+      <div class="tab-content" data-aos="fade-up" data-aos-delay="200">
+        <div class="tab-pane fade active show" id="features-tab-1">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+              <h3>Empowering Your Business with Expert Solutions</h3>
+              <p class="fst-italic">
+                Our tailored services help you achieve greater efficiency and success. We specialize in technology-driven approaches that align with your unique business objectives.
+              </p>
+              <ul>
+                <li><i class="bi bi-check2-all"></i> <span>Seamless integration of advanced tools to enhance productivity.</span></li>
+                <li><i class="bi bi-check2-all"></i> <span>Cutting-edge solutions for a competitive edge in your industry.</span></li>
+                <li><i class="bi bi-check2-all"></i> <span>Collaborative strategies for sustainable growth and innovation.</span></li>
+              </ul>
+              <p>
+                Experience a comprehensive approach that sets the foundation for long-term success. We bring your ideas to fruition with expertise and precision.
+              </p>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/wordpress-923188_1920.jpg' %}" alt="Team working on a project" class="img-fluid">
+            </div>
+          </div>
+        </div><!-- End Tab Content Item -->
+
+        <div class="tab-pane fade" id="features-tab-2">
+          <div class="row">
+            <div class="col-lg-6 order-2 order-lg-1 mt-3 mt-lg-0">
+              <h3>Solutions to Meet Every Business Challenge</h3>
+              <p>
+                Our offerings include tailored strategies designed to tackle your toughest challenges. We take a detailed, results-oriented approach to problem-solving.
+              </p>
+              <ul>
+                <li><i class="bi bi-check2-all"></i> <span>Advanced tools that provide actionable insights.</span></li>
+                <li><i class="bi bi-check2-all"></i> <span>Adaptive strategies focused on maximizing outcomes.</span></li>
+                <li><i class="bi bi-check2-all"></i> <span>Holistic solutions designed to boost operational efficiency.</span></li>
+                <li><i class="bi bi-check2-all"></i> <span>Expertise that ensures consistent delivery of high-quality results.</span></li>
+              </ul>
+            </div>
+            <div class="col-lg-6 order-1 order-lg-2 text-center">
+              <img src="{% static 'assets/img/people-2557396_1920.jpg' %}" alt="Strategic team meeting" class="img-fluid">
+            </div>
+          </div>
+        </div><!-- End Tab Content Item -->
+      </div><!-- End Tab Content -->
+    </div>
+  </section><!-- /Features Section -->
+
+<!-- Call To Action Section -->
+<section id="call-to-action" class="call-to-action section dark-background">
+  <div class="container">
+    <div class="row" data-aos="zoom-in" data-aos-delay="100">
+      <div class="col-xl-9 text-center text-xl-start">
+        <h3>Join Our Community</h3>
+        <p>Stay updated with the latest trends, join our expert-led workshops, and be part of an innovative community dedicated to growth and excellence.</p>
+      </div>
+      <div class="col-xl-3 cta-btn-container text-center text-xl-end">
+        <a href="{% url 'contact' %}" class="btn btn-warning">Contact Us</a>
+      </div>
+    </div>
+  </div>
+</section><!-- /Call To Action Section -->
+
+</main>
+
+<footer id="footer" class="footer bg-dark text-light py-5">
+  <div class="container text-center">
+    <h3 class="sitename">Digital Hub Creations</h3>
+    <p>Your trusted partner in innovative digital solutions and professional services. We bring creativity and expertise to every project, ensuring excellence in design, development, and client satisfaction.</p>
+
+    <div class="social-links d-flex justify-content-center my-4">
+      <a href="https://x.com/bmc_ouma" target="_blank" title="Twitter" class="social-icon mx-3 fs-3"><i class="bi bi-twitter"></i></a>
+      <a href="https://www.facebook.com/bravinmouma" target="_blank" title="Facebook" class="social-icon mx-3 fs-3"><i class="bi bi-facebook"></i></a>
+      <a href="https://www.instagram.com/bmcouma/" target="_blank" title="Instagram" class="social-icon mx-3 fs-3"><i class="bi bi-instagram"></i></a>
+      <a href="https://www.linkedin.com/in/bravin-ouma/" target="_blank" title="LinkedIn" class="social-icon mx-3 fs-3"><i class="bi bi-linkedin"></i></a>
+      <a href="https://wa.link/icn8vi" target="_blank" title="WhatsApp" class="social-icon mx-3 fs-3"><i class="bi bi-whatsapp"></i></a>
+      <a href="https://youtube.com/@dhedigitalhub?si=N4I-X_AKHPtvr6_Y" target="_blank" title="YouTube" class="social-icon mx-3 fs-3"><i class="bi bi-youtube"></i></a>
+      <a href="https://www.tiktok.com/@bmcouma" target="_blank" title="TikTok" class="social-icon mx-3 fs-3"><i class="bi bi-tiktok"></i></a>
+    </div>
+
+    <div class="copyright mt-4">
+      <span>&copy; 2024</span> <strong class="px-1 sitename">Selacio</strong> <span>All Rights Reserved</span>
+    </div>
+    <div class="credits mt-2">
+      Designed by <a href="https://bootstrapmade.com/" class="text-light">BootstrapMade</a>
+    </div>
+  </div>
+</footer>
+
+  <!-- Scroll Top -->
+  <a href="#" id="scroll-top" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Preloader -->
+  <div id="preloader"></div>
+
+  <!-- Vendor JS Files -->
+  <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/php-email-form/validate.js' %}"></script>
+  <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
+  <script src="{% static 'assets/vendor/glightbox/js/glightbox.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/imagesloaded/imagesloaded.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/isotope-layout/isotope.pkgd.min.js' %}"></script>
+  <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+
+  <!-- Main JS File -->
+  <script src="{% static 'assets/js/main.js' %}"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,131 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="testimonials section">
+    <!-- Section Title -->
+    <div class="container section-title" data-aos="fade-up">
+      <h2>Testimonials</h2>
+      <p>Hear what our clients have to say about our work</p>
+    </div><!-- End Section Title -->
+
+    <div class="container" data-aos="fade-up" data-aos-delay="100">
+      <div class="swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            },
+            "breakpoints": {
+              "320": {
+                "slidesPerView": 1,
+                "spaceBetween": 40
+              },
+              "1200": {
+                "slidesPerView": 3,
+                "spaceBetween": 10
+              }
+            }
+          }
+        </script>
+        <div class="swiper-wrapper">
+          <!-- Testimonial Item 1 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/business-man.png' %}" class="testimonial-img" alt="Photo of Kevin Mwangi">
+              <h3>Kevin Mwangi</h3>
+              <h4>CEO & Founder, TechCrafters</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"The team at Digital Solutions Kenya exceeded our expectations. Their expertise in web development and digital marketing helped our startup grow and attract the right audience."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <!-- Testimonial Item 2 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonial-2.jpg' %}" class="testimonial-img" alt="Photo of Amani Njeri">
+              <h3>Amani Njeri</h3>
+              <h4>Senior Designer, Creative Visions</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"Working with Digital Solutions Kenya was a game-changer. Their attention to detail and innovative ideas brought my vision to life, making my projects stand out."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <!-- Testimonial Item 3 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonial-3.jpg' %}" class="testimonial-img" alt="Photo of Kwame Otieno">
+              <h3>Kwame Otieno</h3>
+              <h4>Store Owner, Otieno Mart</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"Their comprehensive approach to SEO and website optimization helped boost my online store traffic by 50% in just two months. Truly outstanding service!"</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <!-- Testimonial Item 4 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonial-4.jpg' %}" class="testimonial-img" alt="Photo of Grace Wambui">
+              <h3>Grace Wambui</h3>
+              <h4>Freelancer & Content Creator</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"From content writing to digital marketing, their team provided solutions tailored perfectly to my needs. The professionalism and creativity were top-notch."</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End Testimonial Item -->
+
+          <!-- Testimonial Item 5 -->
+          <div class="swiper-slide">
+            <div class="testimonial-item">
+              <img src="{% static 'assets/img/testimonials/testimonial-5.jpg' %}" class="testimonial-img" alt="Photo of Ahmed Muriuki">
+              <h3>Ahmed Muriuki</h3>
+              <h4>Entrepreneur & Investor</h4>
+              <div class="stars">
+                <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+              </div>
+              <p>
+                <i class="bi bi-quote quote-icon-left"></i>
+                <span>"The service was efficient and impactful. Their team's dedication and expert advice helped scale my business's digital presence. I'm very satisfied!"</span>
+                <i class="bi bi-quote quote-icon-right"></i>
+              </p>
+            </div>
+          </div><!-- End Testimonial Item -->
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </div>
+  </section><!-- /Testimonials Section -->
+{% endblock %}

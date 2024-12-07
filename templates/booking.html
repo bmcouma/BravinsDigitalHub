@@ -1,0 +1,131 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+<div class="container py-5">
+    <div class="row justify-content-center">
+        <div class="col-lg-8">
+            <div class="form-container bg-light p-4 shadow rounded">
+                <h2 class="mb-4 text-center font-weight-bold">Book Your Appointment</h2>
+
+                {% if messages %}
+                    <div class="mb-3">
+                        {% for message in messages %}
+                            <div class="alert {{ message.tags|default:'alert-info' }}" role="alert">
+                                {{ message }}
+                            </div>
+                        {% endfor %}
+                    </div>
+                {% endif %}
+
+                <form method="POST" action="">
+                    {% csrf_token %}
+
+                    <!-- Full Name -->
+                    <div class="mb-3">
+                        <label for="name" class="form-label text-orange">Full Name <span class="text-danger">*</span></label>
+                        <input type="text" name="name" id="name" class="form-control" placeholder="Enter your full name" required>
+                    </div>
+
+                    <!-- Email -->
+                    <div class="mb-3">
+                        <label for="email" class="form-label text-orange">Email Address <span class="text-danger">*</span></label>
+                        <input type="email" name="email" id="email" class="form-control" placeholder="Enter your email" required>
+                    </div>
+
+                    <!-- Phone -->
+                    <div class="mb-3">
+                        <label for="phone" class="form-label text-orange">Phone Number <span class="text-danger">*</span></label>
+                        <input type="tel" name="phone" id="phone" class="form-control" placeholder="Enter your phone number" required>
+                    </div>
+
+                    <!-- Service -->
+                    <div class="mb-3">
+                        <label for="service" class="form-label text-orange">Select Service <span class="text-danger">*</span></label>
+                        <select name="service" id="service" class="form-select" required onchange="updatePrice()">
+                            <option value="">-- Select a Service --</option>
+                            <option value="digital_marketing" data-price="5000">Digital Marketing</option>
+                            <option value="content_creation" data-price="3000">Content Creation</option>
+                            <option value="social_media_management" data-price="4000">Social Media Management</option>
+                            <option value="web_design" data-price="8000">Web Design</option>
+                            <option value="seo_services" data-price="6000">SEO Services</option>
+                            <option value="virtual_assistance" data-price="3500">Virtual Assistance</option>
+                        </select>
+                    </div>
+
+                    <!-- Price Display -->
+                    <div class="mb-3">
+                        <label for="amount" class="form-label text-orange">Total Amount (Ksh) <span class="text-danger">*</span></label>
+                        <input type="text" name="enter_amount" id="amount" class="form-control" placeholder="Amount will display here" readonly>
+                    </div>
+
+                    <!-- M-Pesa Payment -->
+                    <div class="mb-3">
+                        <label for="mpesa_number" class="form-label text-orange">M-Pesa Phone Number <span class="text-danger">*</span></label>
+                        <input type="tel" name="mpesa_number" id="mpesa_number" class="form-control" placeholder="Enter your M-Pesa phone number" required>
+                        <div class="form-text">Ensure this is the number used for M-Pesa payments.</div>
+                    </div>
+
+                    <!-- Notes -->
+                    <div class="mb-3">
+                        <label for="notes" class="form-label text-orange">Additional Notes (Optional)</label>
+                        <textarea name="notes" id="notes" class="form-control" rows="4" placeholder="Any additional requests or details"></textarea>
+                    </div>
+
+                    <!-- Submit -->
+                    <div class="d-grid">
+                        <button type="submit" class="btn btn-warning font-weight-bold">Submit Booking</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    function updatePrice() {
+        const serviceSelect = document.getElementById('service');
+        const amountInput = document.getElementById('amount');
+        const selectedOption = serviceSelect.options[serviceSelect.selectedIndex];
+
+        if (selectedOption.value) {
+            amountInput.value = selectedOption.getAttribute('data-price');
+        } else {
+            amountInput.value = ''; // Clear the amount if no service is selected
+        }
+    }
+</script>
+
+<style>
+    .form-label.text-orange {
+        color: #ff5733; /* Orange color for form labels */
+    }
+
+    .btn-warning {
+        background-color: #ff5733; /* Orange button */
+        border-color: #ff5733;
+        font-weight: bold; /* Bold text */
+        color: white; /* Text color */
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+    .btn-warning:hover {
+        background-color: #e04e1d; /* Darker shade of orange for hover */
+        border-color: #e04e1d;
+    }
+
+    .form-select, .form-control {
+        transition: border-color 0.3s, box-shadow 0.3s;
+    }
+
+    .form-select:hover, .form-control:hover {
+        border-color: #ff5733; /* Orange hover effect */
+    }
+
+    .form-select:focus, .form-control:focus {
+        border-color: #ff5733; /* Orange focus effect */
+        box-shadow: 0 0 5px #ff5733;
+    }
+</style>
+{% endblock %}

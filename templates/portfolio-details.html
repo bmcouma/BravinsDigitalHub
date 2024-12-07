@@ -1,0 +1,102 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+
+  <div class="page-title dark-background">
+    <div class="container position-relative">
+      <h1>Portfolio Details</h1>
+      <p>Discover the range of innovative digital solutions and exceptional design work we offer at Digital Hub Creations. Learn how we craft unique experiences that elevate brands and businesses.</p>
+      <nav class="breadcrumbs">
+      </nav>
+    </div>
+  </div><!-- End Page Title -->
+
+  <!-- Portfolio Details Section -->
+  <section id="portfolio-details" class="portfolio-details section">
+
+    <div class="container" data-aos="fade-up">
+
+      <div class="portfolio-details-slider swiper init-swiper">
+        <script type="application/json" class="swiper-config">
+          {
+            "loop": true,
+            "speed": 600,
+            "autoplay": {
+              "delay": 5000
+            },
+            "slidesPerView": "auto",
+            "navigation": {
+              "nextEl": ".swiper-button-next",
+              "prevEl": ".swiper-button-prev"
+            },
+            "pagination": {
+              "el": ".swiper-pagination",
+              "type": "bullets",
+              "clickable": true
+            }
+          }
+        </script>
+        <div class="swiper-wrapper align-items-center">
+
+          <div class="swiper-slide">
+            <img src="{% static 'assets/img/portfolio/tenp.png' %}" alt="Portfolio project showcasing app design and functionality">
+          </div>
+
+          <div class="swiper-slide">
+            <img src="{% static 'assets/img/portfolio/bookkeeping-615384_640.jpg' %}" alt="Custom product design for a client showcasing innovation">
+          </div>
+
+          <div class="swiper-slide">
+            <img src="{% static 'assets/img/portfolio/sawe-photography.png' %}" alt="Creative branding project for a business solution">
+          </div>
+
+          <div class="swiper-slide">
+            <img src="{% static 'assets/img/portfolio/Screenshot 2023-09-19 160915.png' %}" alt="Content and media design for corporate projects">
+          </div>
+
+        </div>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-pagination"></div>
+      </div>
+
+      <div class="row justify-content-between gy-4 mt-4">
+
+        <div class="col-lg-8" data-aos="fade-up">
+          <div class="portfolio-description">
+            <h2>Project Overview</h2>
+            <p>
+              Digital Hub Creations specializes in providing comprehensive digital solutions tailored to your business. Our team of experts excels in web design, development, and user experience to ensure every project meets high standards of innovation and functionality.
+            </p>
+            <h2>Key Features</h2>
+            <ul>
+              <li>Innovative design tailored for user interaction</li>
+              <li>Responsive layouts for cross-platform usability</li>
+              <li>Seamless integration with modern web technologies</li>
+              <li>SEO optimized for improved visibility</li>
+            </ul>
+            <h2>Challenges and Solutions</h2>
+            <p>
+              Every project poses unique challenges, but with expert planning and implementation, we overcome them to deliver an impeccable final product. Through effective collaboration and understanding your business needs, we turn your vision into a reality.
+            </p>
+            <a href="{% url 'contact' %}" class="btn btn-primary mt-4">Contact Us to Start Your Next Project</a>
+          </div>
+        </div>
+
+        <div class="col-lg-4">
+          <aside class="sidebar">
+            <h3 class="sidebar-title">Related Projects</h3>
+            <ul class="portfolio-list">
+              <li><a href="portfolio-details.html">Web Application Redesign</a></li>
+              <li><a href="portfolio-details.html">Mobile App Concept Design</a></li>
+              <li><a href="portfolio-details.html">E-commerce Platform Customization</a></li>
+            </ul>
+          </aside>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Portfolio Details Section -->
+{% endblock %}
