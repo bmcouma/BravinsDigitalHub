@@ -1,15 +1,56 @@
 from django.shortcuts import render, redirect, get_object_or_404
-
-
 from django.contrib import messages
 from .forms import ContactForm
 from django.template.context_processors import request
+from .models import Service, Booking, Contact, Member, TeamMember, ImageModel
+from .forms import BookingForm,  ImageUploadForm
 
-from .models import Service, Booking, Contact
-from .forms import BookingForm
+import requests
+from django.http import JsonResponse
+from django.views.decorators.csrf import csrf_exempt
 
-def home(request):
+@csrf_exempt
+def process_payment(request):
+    if request.method == 'POST':
+        phone_number = request.POST.get('phone_number')  # Capture phone number from the user
+        amount = request.POST.get('amount')  # Amount to be paid
+
+        # Safaricom API credentials
+        consumer_key = 'your_consumer_key'
+        consumer_secret = 'your_consumer_secret'
+        business_shortcode = 'your_shortcode'
+        passkey = 'your_passkey'
+
+        # Generate access token
+        auth_url = 'https://sandbox.safaricom.co.ke/oauth/v1/generate?grant_type=client_credentials'
+        response = requests.get(auth_url, auth=(consumer_key, consumer_secret))
+        access_token = response.json().get('access_token')
+
+        # STK Push request
+        api_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
+        headers = {'Authorization': f'Bearer {access_token}'}
+        payload = {
+            "BusinessShortCode": business_shortcode,
+            "Password": passkey,  # Generate password dynamically
+            "Timestamp": "your_timestamp",
+            "TransactionType": "CustomerPayBillOnline",
+            "Amount": amount,
+            "PartyA": phone_number,
+            "PartyB": business_shortcode,
+            "PhoneNumber": phone_number,
+            "CallBackURL": "your_callback_url",
+            "AccountReference": "YourService",
+            "TransactionDesc": "Payment for services"
+        }
+
+        response = requests.post(api_url, json=payload, headers=headers)
+        return JsonResponse(response.json())
+    return JsonResponse({"error": "Invalid request"}, status=400)
+
+
+def index(request):
     return render(request, 'index.html')
+
 
 def about(request):
     return render(request, 'about.html')
@@ -62,8 +103,8 @@ def manage_bookings(request):
     bookings = Booking.objects.all()
     return render(request, 'manage-bookings.html', {'bookings': bookings})
 
-def payment(request):
-    return render(request, 'payment.html')
+def pricing(request):
+    return render(request, 'pricing.html')
 
 def portfolio_details(request):
     return render(request, 'portfolio-details.html')
@@ -104,14 +145,52 @@ def services(request):
     services_list = Service.objects.all()
     return render(request, 'services.html', {'services': services_list})
 
-def privacy(request):
-    return render(request, 'privacy.html')
-
 def terms(request):
     return render(request,'terms.html')
 
 def register(request):
-    return render(request, 'register.html')
+   if request.method == 'POST':
+       members = Member(
+           name=request.POST['name'],
+           username=request.POST['username'],
+           password=request.POST['password']
+       )
+       members.save()
+       return redirect('/login')
+   else:
+       return render(request,'register.html')
 
-def login_view(request):
+def login(request):
+    if request.method == 'POST':
+        username = request.POST.get('username')
+        password = request.POST.get('password')
+
+        try:
+            member = Member.objects.get(username=username)
+            if check_password(password, member.password):
+                return render(request, 'index.html', {'member': member})
+            else:
+                messages.error(request, 'Invalid password.')
+        except Member.DoesNotExist:
+            messages.error(request, 'User does not exist.')
+        return redirect('login')
     return render(request, 'login.html')
+
+def upload_image(request):
+    if request.method == 'POST':
+        form = ImageUploadForm(request.POST, request.FILES)
+        if form.is_valid():
+            form.save()
+            return redirect('/showimage')
+    else:
+        form = ImageUploadForm()
+    return render(request, 'upload_image.html', {'form': form})
+
+def show_image(request):
+    images = ImageModel.objects.all()
+    return render(request, 'show_image.html', {'images': images})
+
+def imagedelete(request, id):
+    image = ImageModel.objects.get(id=id)
+    image.delete()
+    return redirect('/showimage')

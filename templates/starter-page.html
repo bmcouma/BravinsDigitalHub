@@ -43,7 +43,7 @@
 <header id="header" class="header d-flex align-items-center fixed-top">
   <div class="container-fluid container-xl position-relative d-flex align-items-center justify-content-between">
 
-    <a href="{% url 'home' %}" class="logo d-flex align-items-center">
+    <a href="{% url 'index' %}" class="logo d-flex align-items-center">
       <!-- Uncomment the line below if you also wish to use an image logo -->
       <!-- <img src="assets/img/logo.png" alt=""> -->
       <h1 class="sitename">Digital Hub Creations</h1>
@@ -51,7 +51,7 @@
 
     <nav id="navmenu" class="navmenu">
       <ul>
-        <li><a href="{% url 'home' %}" class="active">Home</a></li>
+        <li><a href="{% url 'index' %}" class="active">Home</a></li>
         <li><a href="{% url 'about' %}">About</a></li>
         <li><a href="{% url 'services' %}">Services</a></li>
         <li><a href="{% url 'portfolio-details' %}">Portfolio</a></li>
@@ -63,7 +63,8 @@
             <li><a href="{% url 'blog-details' %}">Blog Details</a></li>
           </ul>
         </li>
-        <li><a href="{% url 'contact' %}">Contact</a></li>
+        <li><a href="{% url 'contact' %}">Contact</a>
+        </li>li><a href="{% url 'pricing' %}">Pricing</a></li>
         <li><a href="{% url 'booking' %}">Bookings</a></li>
       </ul>
       <i class="mobile-nav-toggle d-xl-none bi bi-list"></i>
@@ -115,7 +116,7 @@
       <div class="col-md-4 footer-links">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="{% url 'home' %}">Home</a></li>
+          <li><a href="{% url 'index' %}">Home</a></li>
           <li><a href="{% url 'about' %}">About Us</a></li>
           <li><a href="{% url 'portfolio-details' %}">Portfolio</a></li>
           <li><a href="{% url 'contact' %}">Contact Us</a></li>
@@ -125,7 +126,6 @@
         <h4>Resources</h4>
         <ul>
           <li><a href="{% url 'terms' %}">Terms and Conditions</a></li>
-          <li><a href="{% url 'privacy' %}">Privacy Policy</a></li>
           <li><a href="{% url 'faqs' %}">FAQs</a></li>
           <li><a href="{% url 'blog' %}">Blog</a></li>
         </ul>
@@ -133,7 +133,7 @@
       <div class="col-md-4 footer-newsletter">
         <h4>Subscribe</h4>
         <p>Get the latest updates and insights from our blog and projects.</p>
-        <form action="#" method="post">
+        <form action="#" method="POST">
           <input type="email" name="email" placeholder="Your Email"><input type="submit" value="Subscribe">
         </form>
       </div>

@@ -1,0 +1,146 @@
+{% extends 'starter-page.html' %}
+
+{% load static %}
+
+{% block body %}
+
+<main class="main">
+
+<!-- Pricing Section -->
+<section id="pricing" class="pricing section">
+
+  <!-- Section Title -->
+  <div class="container section-title" data-aos="fade-up">
+    <h2>Pricing</h2>
+    <p>Our competitive pricing plans designed to fit your business needs</p>
+  </div><!-- End Section Title -->
+
+  <div class="container">
+
+    <div class="row gy-3">
+
+      <!-- Digital Marketing -->
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="100">
+        <div class="pricing-item">
+          <h3>Digital Marketing</h3>
+          <h4><sup>KSh</sup>20,000<span> / package</span></h4>
+          <ul>
+            <li>Tailored marketing strategies</li>
+            <li>SEO and paid advertising</li>
+            <li>Email marketing campaigns</li>
+            <li>Boost brand visibility</li>
+            <li>Attract and retain audience</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" onclick="processPayment('20000', 'Digital Marketing')" class="btn-buy">Hire Us Now</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <!-- Content Creation -->
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="200">
+        <div class="pricing-item featured">
+          <h3>Content Creation</h3>
+          <h4><sup>KSh</sup>15,000<span> / package</span></h4>
+          <ul>
+            <li>High-quality, shareable content</li>
+            <li>Customized to business goals</li>
+            <li>Blogs, articles, video scripts</li>
+            <li>Audience-focused approach</li>
+            <li>Drive engagement</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" onclick="processPayment('15000', 'Content Creation')" class="btn-buy">Hire Us Now</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <!-- Social Media Management -->
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="300">
+        <div class="pricing-item">
+          <h3>Social Media Management</h3>
+          <h4><sup>KSh</sup>18,000<span> / package</span></h4>
+          <ul>
+            <li>Expertly managed campaigns</li>
+            <li>Streamline social presence</li>
+            <li>Consistent brand messaging</li>
+            <li>Engagement-driven approach</li>
+            <li>Multi-platform optimization</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" onclick="processPayment('18000', 'Social Media Management')" class="btn-buy">Hire Us Now</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <!-- Web Design -->
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="400">
+        <div class="pricing-item">
+          <h3>Web Design</h3>
+          <h4><sup>KSh</sup>30,000<span> / package</span></h4>
+          <ul>
+            <li>Visually stunning websites</li>
+            <li>User-friendly interface</li>
+            <li>High conversion rates</li>
+            <li>Custom designs</li>
+            <li>Mobile-responsive solutions</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" onclick="processPayment('30000', 'Web Design')" class="btn-buy">Hire Us Now</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <!-- SEO Services -->
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="500">
+        <div class="pricing-item">
+          <h3>SEO Services</h3>
+          <h4><sup>KSh</sup>25,000<span> / package</span></h4>
+          <ul>
+            <li>Comprehensive SEO strategies</li>
+            <li>Enhanced search rankings</li>
+            <li>On-page and off-page SEO</li>
+            <li>Long-term results</li>
+            <li>Increased website traffic</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" onclick="processPayment('25000', 'SEO Services')" class="btn-buy">Hire Us Now</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+      <!-- Virtual Assistance -->
+      <div class="col-xl-3 col-lg-6" data-aos="fade-up" data-aos-delay="600">
+        <div class="pricing-item">
+          <h3>Virtual Assistance</h3>
+          <h4><sup>KSh</sup>15,000<span> / package</span></h4>
+          <ul>
+            <li>Administrative support</li>
+            <li>Task management</li>
+            <li>Streamlined workflows</li>
+            <li>Personalized services</li>
+            <li>Time-efficient solutions</li>
+          </ul>
+          <div class="btn-wrap">
+            <a href="#" onclick="processPayment('15000', 'Virtual Assistance')" class="btn-buy">Hire Us Now</a>
+          </div>
+        </div>
+      </div><!-- End Pricing Item -->
+
+    </div>
+
+  </div>
+
+</section><!-- /Pricing Section -->
+
+</main>
+
+<script>
+  function processPayment(amount, service) {
+    // Integrate M-Pesa API here
+    alert(`Processing payment of KSh ${amount} for ${service}`);
+    // Redirect or handle payment process
+  }
+</script>
+
+{% endblock %}

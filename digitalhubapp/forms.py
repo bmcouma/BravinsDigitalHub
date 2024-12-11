@@ -1,5 +1,5 @@
 from django import forms
-from .models import Booking, Contact
+from .models import Booking, Contact, ImageModel
 
 
 class BookingForm(forms.ModelForm):
@@ -7,10 +7,12 @@ class BookingForm(forms.ModelForm):
         model = Booking
         fields = ['name', 'email', 'phone', 'service', 'amount', 'mpesa_number', 'notes']
 
-from django import forms
-from .models import Contact
-
 class ContactForm(forms.ModelForm):
     class Meta:
         model = Contact
         fields = ['name', 'email', 'subject', 'message']
+
+class ImageUploadForm(forms.ModelForm):
+    class Meta:
+        model = ImageModel
+        fields = '__all__'
